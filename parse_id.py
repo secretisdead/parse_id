@@ -12,3 +12,8 @@ def parse_id(id):
 	else:
 		raise TypeError
 	return (id, id_bytes)
+
+def get_id_bytes(id):
+	if isinstance(id, bytes):
+		return id
+	return base64_url_decode(id)
